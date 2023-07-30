@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "@rocketseat/eslint-config/node",
+    "plugin:vitest-globals/recommended"
+  ],
+  "plugins": [
+    "import-helpers"
+  ],
+  "rules": {
+    "camelcase": "off",
+    "no-useless-constructor": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          [
+            "module",
+            "/@faker-js/",
+            "/^@prisma/"
+          ],
+          [
+            "/^@/"
+          ],
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
+      }
+    ]
+  },
+  "env": {
+    "vitest-globals/env": true
+  }
+}
